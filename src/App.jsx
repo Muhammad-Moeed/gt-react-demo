@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Typography, Box, Container, Stack } from "@mui/material";
+import { T } from "gt-react"; 
 import en from "./gt/en.json";
 import es from "./gt/es.json";
 import ur from "./gt/ur.json";
@@ -18,20 +19,18 @@ function App({ setLanguage }) {
     ur,
   };
 
-  const t = translations[currentLanguage];
-
   return (
     <Container maxWidth="sm" sx={{ textAlign: "center", mt: 10 }}>
       <Typography variant="h3" gutterBottom>
-        {t.greeting}
+        <T>{translations[currentLanguage].greeting}</T>
       </Typography>
 
       <Typography variant="body1" gutterBottom sx={{ fontSize: "1.2rem", mb: 4 }}>
-        {t.description}
+        <T>{translations[currentLanguage].description}</T>
       </Typography>
 
       <Typography variant="h6" gutterBottom>
-        {t.select_language}
+        <T>{translations[currentLanguage].select_language}</T>
       </Typography>
 
       <Stack direction="row" spacing={2} justifyContent="center">
